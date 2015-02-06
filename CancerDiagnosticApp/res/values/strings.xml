@@ -1,0 +1,5 @@
+<resources>
+
+    <string name="app_name">CancerDiagnosticApp</string>
+    <string name="authentication_code">Authentication code: </string>
+</resources>
