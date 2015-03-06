@@ -2,27 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
     android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/doctor_user_edit_text"
+    <TextView
+        android:id="@+id/radiography_details_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/user" />
+        android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/doctor_password_edit_text"
+    <TextView
+        android:id="@+id/radiography_details_diagnostic"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/insert_password"
-        android:inputType="textPassword" />
+        android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/login_button"
+    <TextView
+        android:id="@+id/radiography_details_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/log_in" />
+        android:textSize="18sp" />
 
 </LinearLayout>

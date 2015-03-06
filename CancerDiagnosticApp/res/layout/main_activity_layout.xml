@@ -2,20 +2,27 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
 
-    <FrameLayout
-        android:id="@+id/doctor_list_layout"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1" >
-    </FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/log_in_as"
+        android:textSize="20sp" />
 
-    <FrameLayout
-        android:id="@+id/pacient_list_layout"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="2" >
-    </FrameLayout>
+    <Button
+        android:id="@+id/administrator_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/administrator" />
+
+    <Button
+        android:id="@+id/doctor_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="@string/doctor" />
 
 </LinearLayout>
