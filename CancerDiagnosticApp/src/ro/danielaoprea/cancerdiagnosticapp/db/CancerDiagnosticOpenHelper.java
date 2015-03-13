@@ -20,9 +20,9 @@ public class CancerDiagnosticOpenHelper extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		UserTableUtils.onCreate(db);
+		UserTableUtils.insertAdmin(db);
 		PacientTableUtils.onCreate(db);
 		RadiographyTableUtils.onCreate(db);
-
 		PacientTableUtils.triggerDeletePacients(db);
 	}
 

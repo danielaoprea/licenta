@@ -1,6 +1,7 @@
 package ro.danielaoprea.cancerdiagnosticapp.database.tables;
 
 import ro.danielaoprea.cancerdiagnosticapp.beans.User;
+import ro.danielaoprea.cancerdiagnosticapp.utils.Helper;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -33,6 +34,14 @@ public class UserTableUtils {
 
 	public static void onCreate(SQLiteDatabase database) {
 		database.execSQL(createTable());
+
+	}
+
+	public static void insertAdmin(SQLiteDatabase database) {
+		User a = new User(2, "Pop Gigel", Helper.SecurityUtils.sha1("admin"),
+				"admin", "admin@gmail.com", "112", User.ADMIN);
+		database.insert(TABLE_NAME, null, UserTableUtils.createContentValues(a));
+
 	}
 
 	public static ContentValues createContentValues(User user) {
@@ -45,7 +54,7 @@ public class UserTableUtils {
 		cv.put(ROLE, user.getRole());
 		return cv;
 	}
-	
+
 	public static ContentValues createContentValuesForUpdate(User user) {
 		ContentValues cv = new ContentValues();
 		cv.put(NAME, user.getName());

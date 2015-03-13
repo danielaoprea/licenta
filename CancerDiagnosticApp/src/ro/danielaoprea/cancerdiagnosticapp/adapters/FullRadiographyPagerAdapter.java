@@ -20,8 +20,9 @@ public class FullRadiographyPagerAdapter extends FragmentStatePagerAdapter {
 	@Override
 	public Fragment getItem(int position) {
 		Radiography radio = radios.get(position);
-		return FullRadiographyFragment.newInstance(radio.getPath(),
-				radio.getDiagnostic(), radio.getDetails(), radio.getDate());
+		return FullRadiographyFragment.newInstance(radio.getIdRadiography(),
+				radio.getPath(), radio.getDiagnostic(), radio.getDetails(),
+				radio.getDate());
 	}
 
 	@Override

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-sdk
-        android:minSdkVersion="13"
+        android:minSdkVersion="14"
         android:targetSdkVersion="21" />
 
     <application
@@ -32,8 +32,9 @@
             android:theme="@style/FullScreenActionBarTheme" />
         <activity
             android:name="ro.danielaoprea.cancerdiagnosticapp.activities.RadiographyDetailsActivity"
-            android:theme="@android:style/Theme.Holo.Light.Dialog" />
-        <provider
+            android:theme="@style/PopupTheme" />
+
+        <provider
             android:name="ro.danielaoprea.cancerdiagnosticapp.providers.CancerDiagnosticContentProvider"
             android:authorities="ro.danielaoprea.cancerdiagnosticapp.providers.CancerDiagnosticContentProvider"
             android:exported="false" >
