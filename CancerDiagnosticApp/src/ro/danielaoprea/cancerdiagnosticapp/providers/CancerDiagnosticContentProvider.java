@@ -1,8 +1,8 @@
 package ro.danielaoprea.cancerdiagnosticapp.providers;
 
+import ro.danielaoprea.cancerdiagnosticapp.database.tables.UserTableUtils;
 import ro.danielaoprea.cancerdiagnosticapp.database.tables.PacientTableUtils;
 import ro.danielaoprea.cancerdiagnosticapp.database.tables.RadiographyTableUtils;
-import ro.danielaoprea.cancerdiagnosticapp.database.tables.UserTableUtils;
 import ro.danielaoprea.cancerdiagnosticapp.db.CancerDiagnosticOpenHelper;
 import android.content.ContentProvider;
 import android.content.ContentValues;
@@ -10,6 +10,7 @@ import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.util.Log;
 
 public class CancerDiagnosticContentProvider extends ContentProvider {
 
@@ -56,17 +57,17 @@ public class CancerDiagnosticContentProvider extends ContentProvider {
 		switch (uriType) {
 		case USER:
 			cursor = db.query(USER_TABLE, projection, selection, selectionArgs,
-					null, null, sortOrder);
+					null, null, null);
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			return cursor;
 		case PACIENT:
 			cursor = db.query(PACIENT_TABLE, projection, selection,
-					selectionArgs, null, null, sortOrder);
+					selectionArgs, null, null, null);
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			return cursor;
 		case RADIOGRAPHY:
 			cursor = db.query(RADIOGRAPHY_TABLE, projection, selection,
-					selectionArgs, null, null, sortOrder);
+					selectionArgs, null, null, null);
 			cursor.setNotificationUri(getContext().getContentResolver(), uri);
 			return cursor;
 		default:
@@ -118,9 +119,6 @@ public class CancerDiagnosticContentProvider extends ContentProvider {
 		case PACIENT:
 			itemsDeleted = db.delete(PACIENT_TABLE, selection, selectionArgs);
 			break;
-		case RADIOGRAPHY:
-			itemsDeleted = db.delete(RADIOGRAPHY_TABLE, selection, selectionArgs);
-			break;
 		default:
 			throw new IllegalArgumentException("Unknown URI:" + uri);
 		}
@@ -142,12 +140,6 @@ public class CancerDiagnosticContentProvider extends ContentProvider {
 			getContext().getContentResolver().notifyChange(USER_URI, null);
 			break;
 
-		case RADIOGRAPHY:
-			itemsUpdated = db.update(RADIOGRAPHY_TABLE, values, selection,
-					selectionArgs);
-			getContext().getContentResolver().notifyChange(RADIOGRAPHY_URI,
-					null);
-			break;
 		default:
 			throw new IllegalArgumentException("Unknown URI:" + uri);
 		}

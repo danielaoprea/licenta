@@ -50,7 +50,7 @@ public class WelcomeActivity extends FragmentActivity implements
 			viewPager = (ViewPager) findViewById(R.id.viewpager);
 			viewPager.setAdapter(welcomePageAdapter);
 		}
-
+		
 	}
 
 	private long getLoggedIdFromSharedPref() {
@@ -81,6 +81,19 @@ public class WelcomeActivity extends FragmentActivity implements
 		fragmentList.add(WelcomeFragment.newInstance(R.drawable.rsz_image2));
 		fragmentList.add(WelcomeFragment.newInstance(R.drawable.image4));
 		return fragmentList;
+	}
+
+	private void insertDoctor() {
+		User d = new User(1, "Oprea Daniela",
+				Helper.SecurityUtils.sha1("daniela"), "daniela", "daniela",
+				"0264 555000", User.DOCTOR);
+		getContentResolver().insert(CancerDiagnosticContentProvider.USER_URI,
+				UserTableUtils.createContentValues(d));
+
+		User a = new User(2, "Pop Gigel", Helper.SecurityUtils.sha1("admin"),
+				"admin", "gigi", "111", User.ADMIN);
+		getContentResolver().insert(CancerDiagnosticContentProvider.USER_URI,
+				UserTableUtils.createContentValues(a));
 	}
 
 	private class QueryUserTask extends AsyncTask<Long, Void, User> {

@@ -34,7 +34,7 @@
     <string name="confirm_password">Confirm password</string>
     <string name="password_changed">Password changed successfully</string>
     <string name="wrong_current_password">Wrong current password</string>
-    <string name="wrong_confirmed_password">Wrong confirmed password</string>
+    <string name="wrong_confirmed_password">Wronf confirmed password</string>
     <string name="log_out">Logout</string>
     <string name="invalid_email">Email address is invalid</string>
     <string name="invalid_user">Invalid user</string>
@@ -48,12 +48,9 @@
     <string name="insert_radiography">Insert radiography</string>
     <string name="browse">Browse</string>
     <string name="details">Details</string>
-    <string name="details_">Details : </string>
     <string name="diagnostic">Diagnostic</string>
     <string name="see_more"><u>See more</u></string>
     <string name="date">Date</string>
     <string name="edit">Edit</string>
-    <string name="edit_underlined"><u>Edit</u></string>
-    <string name="edit_radiography_details">Edit radiography details</string>
 
 </resources>

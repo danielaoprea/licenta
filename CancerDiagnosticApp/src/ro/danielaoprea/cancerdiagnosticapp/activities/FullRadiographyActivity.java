@@ -6,23 +6,19 @@ import ro.danielaoprea.cancerdiagnosticapp.R;
 import ro.danielaoprea.cancerdiagnosticapp.adapters.FullRadiographyPagerAdapter;
 import ro.danielaoprea.cancerdiagnosticapp.beans.Radiography;
 import ro.danielaoprea.cancerdiagnosticapp.database.tables.RadiographyTableUtils;
-import ro.danielaoprea.cancerdiagnosticapp.fragments.dialogs.EditRadiographyDialogFragment.OnEditRadiographyDialogListener;
 import ro.danielaoprea.cancerdiagnosticapp.providers.CancerDiagnosticContentProvider;
 import ro.danielaoprea.cancerdiagnosticapp.utils.Constants;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Loader;
 import android.database.Cursor;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 
 public class FullRadiographyActivity extends Activity implements
-		LoaderCallbacks<Cursor>, OnPageChangeListener,
-		OnEditRadiographyDialogListener {
+		LoaderCallbacks<Cursor>, OnPageChangeListener {
 
 	private static final int ID_LOADER_RADIOGRAPHY = 1;
 	private static final String ARG_PACIENT_CNP = "arg_pacient_cnp";
@@ -134,28 +130,6 @@ public class FullRadiographyActivity extends Activity implements
 	public void onPageSelected(int position) {
 		currentRadiographyId = fullRadiographyPagerAdapter.getRadiographyList()
 				.get(position).getIdRadiography();
-	}
-
-	@Override
-	public void onPositiveButtonClicked(long radioId, String details) {
-		new UpdateRadiographyTask().execute(String.valueOf(radioId), details);
-
-	}
-
-	private class UpdateRadiographyTask extends AsyncTask<String, Void, Void> {
-
-		@Override
-		protected Void doInBackground(String... params) {
-
-			ContentValues cv = new ContentValues();
-			cv.put(RadiographyTableUtils.DETAILS, params[1]);
-			getContentResolver().update(
-					CancerDiagnosticContentProvider.RADIOGRAPHY_URI, cv,
-					RadiographyTableUtils.ROW_ID + " =? ",
-					new String[] { params[0] });
-			return null;
-		}
-
 	}
 
 }
