@@ -9,6 +9,32 @@ package ro.danielaoprea.cancerdiagnosticapp;
 
 public final class R {
     public static final class attr {
+        /** <p>May be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>any</code></td><td>-1</td><td></td></tr>
+<tr><td><code>back</code></td><td>99</td><td></td></tr>
+<tr><td><code>front</code></td><td>98</td><td></td></tr>
+</table>
+         */
+        public static final int camera_id=0x7f010001;
+        /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int show_fps=0x7f010000;
     }
     public static final class color {
         public static final int text_color=0x7f040000;
@@ -31,67 +57,70 @@ public final class R {
         public static final int shape_rectangle_transparent=0x7f02000b;
     }
     public static final class id {
-        public static final int action_log_in=0x7f090036;
-        public static final int action_log_out=0x7f090037;
-        public static final int add_doctor_action=0x7f090034;
-        public static final int add_pacient_action=0x7f090039;
-        public static final int add_radiography_action=0x7f09003c;
-        public static final int address_edit_text=0x7f090010;
-        public static final int administrator_button=0x7f09001b;
-        public static final int browse_button=0x7f090016;
-        public static final int change_password_action=0x7f09003a;
-        public static final int chosed_radiography_image_view=0x7f090015;
-        public static final int cnp_edit_text=0x7f09000f;
-        public static final int confirm_password=0x7f090002;
-        public static final int current_password=0x7f090000;
-        public static final int delete_doctor_action=0x7f090033;
-        public static final int delete_pacient_action=0x7f090038;
-        public static final int doctor_button=0x7f09001c;
-        public static final int doctor_email=0x7f090006;
-        public static final int doctor_name=0x7f090003;
-        public static final int doctor_password_edit_text=0x7f090019;
-        public static final int doctor_phone=0x7f090005;
-        public static final int doctor_user_edit_text=0x7f090018;
-        public static final int doctor_username=0x7f090004;
-        public static final int edit_radiography_information_action=0x7f09003b;
-        public static final int email_edit_text=0x7f090014;
-        public static final int empty=0x7f09002a;
-        public static final int empty_view_text=0x7f090007;
-        public static final int full_radiography_details=0x7f09000b;
-        public static final int full_radiography_diagnostic=0x7f09000a;
-        public static final int full_radiography_imagine_view=0x7f090008;
-        public static final int full_radiography_more=0x7f09000c;
-        public static final int image=0x7f090032;
-        public static final int log_in_button=0x7f090030;
-        public static final int log_out_action=0x7f090035;
-        public static final int login_button=0x7f09001a;
-        public static final int name_edit_text=0x7f09000e;
-        public static final int new_password=0x7f090001;
-        public static final int pacient_address=0x7f090026;
-        public static final int pacient_cnp=0x7f090025;
-        public static final int pacient_details_address_text_view=0x7f090021;
-        public static final int pacient_details_cnp_text_view=0x7f090020;
-        public static final int pacient_details_email_text_view=0x7f090023;
-        public static final int pacient_details_layout=0x7f09001d;
-        public static final int pacient_details_name_text_view=0x7f09001f;
-        public static final int pacient_details_phone_text_view=0x7f090022;
-        public static final int pacient_email=0x7f090028;
-        public static final int pacient_name=0x7f090024;
-        public static final int pacient_phone=0x7f090027;
-        public static final int pacient_radiograpys_layout=0x7f09001e;
-        public static final int password_edit_text=0x7f090012;
-        public static final int phone_edit_text=0x7f090013;
-        public static final int radiography_date_text_view=0x7f09002f;
-        public static final int radiography_details=0x7f090017;
-        public static final int radiography_details_date=0x7f09002b;
-        public static final int radiography_details_details=0x7f09002d;
-        public static final int radiography_details_diagnostic=0x7f09002c;
-        public static final int radiography_details_layout=0x7f090009;
-        public static final int radiography_grid_view=0x7f090029;
-        public static final int radiography_image_view=0x7f09002e;
-        public static final int radiography_view_pager=0x7f09000d;
-        public static final int username_edit_text=0x7f090011;
-        public static final int viewpager=0x7f090031;
+        public static final int action_log_in=0x7f090039;
+        public static final int action_log_out=0x7f09003a;
+        public static final int add_doctor_action=0x7f090037;
+        public static final int add_pacient_action=0x7f09003c;
+        public static final int add_radiography_action=0x7f09003f;
+        public static final int address_edit_text=0x7f090013;
+        public static final int administrator_button=0x7f09001e;
+        public static final int any=0x7f090000;
+        public static final int back=0x7f090001;
+        public static final int browse_button=0x7f090019;
+        public static final int change_password_action=0x7f09003d;
+        public static final int chosed_radiography_image_view=0x7f090018;
+        public static final int cnp_edit_text=0x7f090012;
+        public static final int confirm_password=0x7f090005;
+        public static final int current_password=0x7f090003;
+        public static final int delete_doctor_action=0x7f090036;
+        public static final int delete_pacient_action=0x7f09003b;
+        public static final int doctor_button=0x7f09001f;
+        public static final int doctor_email=0x7f090009;
+        public static final int doctor_name=0x7f090006;
+        public static final int doctor_password_edit_text=0x7f09001c;
+        public static final int doctor_phone=0x7f090008;
+        public static final int doctor_user_edit_text=0x7f09001b;
+        public static final int doctor_username=0x7f090007;
+        public static final int edit_radiography_information_action=0x7f09003e;
+        public static final int email_edit_text=0x7f090017;
+        public static final int empty=0x7f09002d;
+        public static final int empty_view_text=0x7f09000a;
+        public static final int front=0x7f090002;
+        public static final int full_radiography_details=0x7f09000e;
+        public static final int full_radiography_diagnostic=0x7f09000d;
+        public static final int full_radiography_imagine_view=0x7f09000b;
+        public static final int full_radiography_more=0x7f09000f;
+        public static final int image=0x7f090035;
+        public static final int log_in_button=0x7f090033;
+        public static final int log_out_action=0x7f090038;
+        public static final int login_button=0x7f09001d;
+        public static final int name_edit_text=0x7f090011;
+        public static final int new_password=0x7f090004;
+        public static final int pacient_address=0x7f090029;
+        public static final int pacient_cnp=0x7f090028;
+        public static final int pacient_details_address_text_view=0x7f090024;
+        public static final int pacient_details_cnp_text_view=0x7f090023;
+        public static final int pacient_details_email_text_view=0x7f090026;
+        public static final int pacient_details_layout=0x7f090020;
+        public static final int pacient_details_name_text_view=0x7f090022;
+        public static final int pacient_details_phone_text_view=0x7f090025;
+        public static final int pacient_email=0x7f09002b;
+        public static final int pacient_name=0x7f090027;
+        public static final int pacient_phone=0x7f09002a;
+        public static final int pacient_radiograpys_layout=0x7f090021;
+        public static final int password_edit_text=0x7f090015;
+        public static final int phone_edit_text=0x7f090016;
+        public static final int radiography_date_text_view=0x7f090032;
+        public static final int radiography_details=0x7f09001a;
+        public static final int radiography_details_date=0x7f09002e;
+        public static final int radiography_details_details=0x7f090030;
+        public static final int radiography_details_diagnostic=0x7f09002f;
+        public static final int radiography_details_layout=0x7f09000c;
+        public static final int radiography_grid_view=0x7f09002c;
+        public static final int radiography_image_view=0x7f090031;
+        public static final int radiography_view_pager=0x7f090010;
+        public static final int username_edit_text=0x7f090014;
+        public static final int viewpager=0x7f090034;
     }
     public static final class layout {
         public static final int change_password_dialog_layout=0x7f030000;
@@ -207,5 +236,61 @@ public final class R {
          */
         public static final int AppTheme=0x7f070001;
         public static final int FullScreenActionBarTheme=0x7f070002;
+        public static final int PopupTheme=0x7f070003;
     }
+    public static final class styleable {
+        /** Attributes that can be used with a CameraBridgeViewBase.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #CameraBridgeViewBase_camera_id ro.danielaoprea.cancerdiagnosticapp:camera_id}</code></td><td></td></tr>
+           <tr><td><code>{@link #CameraBridgeViewBase_show_fps ro.danielaoprea.cancerdiagnosticapp:show_fps}</code></td><td></td></tr>
+           </table>
+           @see #CameraBridgeViewBase_camera_id
+           @see #CameraBridgeViewBase_show_fps
+         */
+        public static final int[] CameraBridgeViewBase = {
+            0x7f010000, 0x7f010001
+        };
+        /**
+          <p>This symbol is the offset where the {@link ro.danielaoprea.cancerdiagnosticapp.R.attr#camera_id}
+          attribute's value can be found in the {@link #CameraBridgeViewBase} array.
+
+
+          <p>May be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+<p>May be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>any</code></td><td>-1</td><td></td></tr>
+<tr><td><code>back</code></td><td>99</td><td></td></tr>
+<tr><td><code>front</code></td><td>98</td><td></td></tr>
+</table>
+          @attr name ro.danielaoprea.cancerdiagnosticapp:camera_id
+        */
+        public static final int CameraBridgeViewBase_camera_id = 1;
+        /**
+          <p>This symbol is the offset where the {@link ro.danielaoprea.cancerdiagnosticapp.R.attr#show_fps}
+          attribute's value can be found in the {@link #CameraBridgeViewBase} array.
+
+
+          <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name ro.danielaoprea.cancerdiagnosticapp:show_fps
+        */
+        public static final int CameraBridgeViewBase_show_fps = 0;
+    };
 }

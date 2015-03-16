@@ -2,6 +2,7 @@ package ro.danielaoprea.cancerdiagnosticapp.adapters;
 
 import ro.danielaoprea.cancerdiagnosticapp.R;
 import ro.danielaoprea.cancerdiagnosticapp.database.tables.RadiographyTableUtils;
+import ro.danielaoprea.cancerdiagnosticapp.imageprocessing.CalculateHog;
 import ro.danielaoprea.cancerdiagnosticapp.utils.Helper;
 import android.content.Context;
 import android.database.Cursor;
@@ -36,12 +37,8 @@ public class RadiographyAdapter extends CursorAdapter {
 				.findViewById(R.id.radiography_date_text_view);
 		date.setText(Helper.Date.getDateDayMonthyear(cursor.getLong(cursor
 				.getColumnIndex(RadiographyTableUtils.DATE))));
-		radiographyImage.setImageBitmap(Helper.Picture.getBitmapFromPath(
-				cursor.getString(cursor
-						.getColumnIndex(RadiographyTableUtils.PATH)),
-				context.getResources().getDimensionPixelSize(
-						R.dimen.radiography_grid_view_dimes),
-				context.getResources().getDimensionPixelSize(
-						R.dimen.radiography_grid_view_dimes)));
+		CalculateHog hog = new CalculateHog(context);
+		radiographyImage.setImageBitmap(hog.computeHog(cursor.getString(cursor
+				.getColumnIndex(RadiographyTableUtils.PATH))));
 	}
 }
